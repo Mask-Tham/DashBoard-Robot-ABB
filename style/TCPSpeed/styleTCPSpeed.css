@@ -1,0 +1,24 @@
+.band-TCP {
+  margin: 10px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+.band-TCP .items-1 {
+  display: grid;
+  grid-template-rows: 70px 500px;
+  font-size: 30px;
+}
+
+.block, .band-TCP .items-1 {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+#text-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  -webkit-box-align: center;
+}/*# sourceMappingURL=styleTCPSpeed.css.map */

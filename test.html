@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<link rel="stylesheet" href="/docs/style/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+	<!-- fire base -->
+	<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase.js"></script>
+	<!-- <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script> -->
+
+	<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+	<!-- <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script> -->
+
+	<!-- Add Firebase products that you want to use -->
+	<!-- <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script> -->
+	<!-- <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script> -->
+
+	<script src="/docs/script/initFirebase.js"></script>
+
+	<!-- <script src="/__/firebase/8.2.7/firebase-app.js"></script> -->
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+	<!-- Initialize Firebase -->
+	<!-- <script src="/__/firebase/init.js"></script> -->
+
+	<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script> -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+		crossorigin="anonymous"></script>
+	<!-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
+	<script src="/docs/script/tether/tether.min.js"></script>
+	<script src="/docs/script/websocket.js"></script>
+	<script src="/docs/script/datetime.js"></script>
+	<script src="/docs/script/sidebar.js"></script>
+	<script src="/docs/script/test.js"></script>
+	<script src="/docs/script/theme.js"></script>
+	<script src="/docs/script/testSetDataToFirebase.js"></script>
+	<!-- <script lang="javascript" src="/docs/script/sheetjs-master/dist/xlsx.full.min.js"></script>
+	<script lang="javascript" src="/docs/script/FileSaver.js-master/dist/FileSaver.min.js"></script> -->
+
+
+	<link href="/docs/style/threme/style.css" rel="stylesheet">
+	<link href="/docs/style/energypage/energystyle.css" rel="stylesheet">
+	<link rel="icon" href="img/ABBicon.jpg" type="image/x-icon">
+
+	<title>TEST</title>
+</head>
+
+<body>
+	<div id="websocketStatus">WEBSOCKET ERROR !!!</div>
+	<!-- header -->
+	<nav class="navbar fixed-top" id="header">
+		<!-- <div id="websocketStatus">WEBSOCKET ERROR !!!</div> -->
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<div id="sidebar-toggle-button">
+					<i class="fa fa-bars" aria-hidden="true"></i>
+				</div>
+				<div class="brand">
+					<a href="/docs/DashBoard.html">
+						<span class="hidden-xs-down mr-5 ml-3"><img src="/docs/img/ABB.png" height="30px"></span>
+						<span class="lead ml-5">TEST</span>
+					</a>
+				</div>
+				<div id="themeMode" onclick="clickChangeTheme()" class="moon">
+
+					<img id="iconTheme" src="/docs/svg/moon.svg" height="20px" width="20px">
+
+				</div>
+				<div class="datetime">
+					<span id="datetime"></span>
+				</div>
+
+			</div>
+		</div>
+	</nav>
+	<!-- /header -->
+
+	<!-- sidebar -->
+	<div class="sidebar-toggle" id="sidebar">
+
+	</div>
+	<!-- /sidebar -->
+
+	<div class="page-content-toggle" id="page-content-wrapper">
+		<div class="container-fluid">
+
+			<!-- 1st row -->
+			<div class="row">
+
+				<div class="col-md-12">
+					<div class="card card-body">
+						<div class="card-title">
+							Energy Total
+							<button onclick="exportTableToExcel()" class="ExCSV">
+								<i class="fa fa-download" aria-hidden="true"></i>
+								Export CSV
+							</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<button onclick="addsub()" class="addsub">
+				<i class="fa fa-download" aria-hidden="true"></i>
+				add sub
+			</button>
+
+			<button onclick="unsub1()" class="unsub">
+				<i class="fa fa-download" aria-hidden="true"></i>
+				unsub1
+			</button>
+			<button onclick="unsub2()" class="unsub">
+				<i class="fa fa-download" aria-hidden="true"></i>
+				unsub2
+			</button>
+			<button onclick="getSubGroup()" class="getSubGroup">
+				<i class="fa fa-download" aria-hidden="true"></i>
+				get Sub Group
+			</button>
+			<button onclick="websocketOn()" class="getSubGroup">
+				<i class="fa fa-download" aria-hidden="true"></i>
+				test
+			</button>
+			<button onclick="writeUserData('mask22','mask','mask@','123456')" class="getSubGroup">
+				<i class="fa fa-download" aria-hidden="true"></i>
+				test
+			</button>
+
+
+		</div>
+		<!-- /.container-fluid -->
+
+	</div>
+	<!-- <script>
+		var firebaseConfig = {
+			apiKey: "AIzaSyCgo0482ztq4TrYyx4qmob4MxJ2O4r7hMU",
+			authDomain: "use-floline.firebaseapp.com",
+			databaseURL: "https://use-floline-default-rtdb.firebaseio.com",
+			projectId: "use-floline",
+			storageBucket: "use-floline.appspot.com",
+			messagingSenderId: "1070273474599",
+			appId: "1:1070273474599:web:9e11f121235641bd5cde02"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		var firebaseRef = firebase.database()
+		console.log(firebaseRef)
+	</script> -->
+</body>
+
+</html>

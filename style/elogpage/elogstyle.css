@@ -1,0 +1,228 @@
+:root {
+  --background-color: #f6f6f6;
+  --base-color: #fff;
+  --abb-color: #ff000f;
+  --text-color: #000;
+}
+
+.showType {
+  display: inline-block;
+  margin-left: auto;
+  font-size: 16px;
+  padding-top: 9px;
+}
+
+.showList {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 16px;
+  padding-top: 9px;
+}
+
+.selectDate {
+  display: inline-block;
+  right: 0;
+  margin-left: 10px;
+  font-size: 16px;
+  padding-top: 9px;
+}
+
+/* collapse  */
+.collapsible {
+  cursor: pointer;
+  padding: 10px;
+  font-family: "abbViceBold";
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid;
+  border-radius: 10px;
+  text-align: left;
+}
+.collapsible:hover {
+  background-color: #888888;
+}
+.collapsible .elog-type {
+  min-width: 110px;
+  padding: 6px 15px;
+  text-align: center;
+  border-radius: 3px;
+  margin-right: 10px;
+  /* background: #000; */
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  color: #fff;
+  float: left;
+}
+.collapsible .elog-code {
+  min-width: 80px;
+  padding: 6px 15px;
+  text-align: center;
+  border-radius: 3px;
+  margin: 0 10px 0 10px;
+  /* background: #000; */
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  float: left;
+}
+.collapsible .elog-title {
+  min-width: 80px;
+  padding: 6px 15px;
+  text-align: center;
+  border-radius: 3px;
+  /* background: #000; */
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  float: left;
+}
+.collapsible .elog-time {
+  min-width: 80px;
+  padding: 6px 15px;
+  text-align: center;
+  border-radius: 3px;
+  /* background: #000; */
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  float: right;
+}
+
+.collapsible-active {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.content {
+  padding: 0px 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  color: #000;
+  border: 0px solid;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.content h4 {
+  font-family: "abbViceBold";
+}
+.content h4:nth-of-type(1) {
+  padding-top: 10px;
+}
+.content p {
+  font-family: "abbVoiceRegular";
+}
+
+.block {
+  margin: 0 0 8px 0;
+  background-color: #fff;
+  color: white;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.block.block-info {
+  background: white;
+}
+.block.block-info .collapsible {
+  border-color: #347fd3;
+  background: white;
+}
+.block.block-info .collapsible:hover {
+  background-color: white;
+}
+.block.block-info .collapsible .elog-type {
+  background-color: #347fd3;
+}
+.block.block-info .content {
+  border-color: #347fd3;
+}
+.block.block-warn {
+  background: #fcf3d0;
+}
+.block.block-warn .collapsible {
+  border-color: #f1c40f;
+  background: #fcf3d0;
+}
+.block.block-warn .collapsible:hover {
+  background-color: #f7dc6f;
+}
+.block.block-warn .collapsible .elog-type {
+  background-color: #f1c40f;
+}
+.block.block-warn .content {
+  border-color: #f1c40f;
+}
+.block.block-error {
+  background: #fabdbd;
+}
+.block.block-error .collapsible {
+  border-color: #da1111;
+  background: #fabdbd;
+}
+.block.block-error .collapsible:hover {
+  background-color: #f25f5f;
+}
+.block.block-error .collapsible .elog-type {
+  background-color: #da1111;
+}
+.block.block-error .content {
+  border-color: #da1111;
+}
+
+#headerMess {
+  border-bottom: 1px solid;
+  border-color: #ff000f;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  font-family: "abbViceBold";
+  color: var(--text-color);
+}
+#headerMess div {
+  text-align: center;
+  border-right: 1px solid;
+  border-color: #ff000f;
+}
+#headerMess div:nth-of-type(1) {
+  max-width: 130px;
+}
+#headerMess div:nth-of-type(2) {
+  max-width: 100px;
+}
+#headerMess div:nth-last-of-type(1) {
+  border-right: none;
+  max-width: 174px;
+}
+
+.ExCSV {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 16px;
+  padding: 9px;
+  color: white;
+  background-color: #ff000f;
+  border-radius: 5px;
+  border: none;
+}
+.ExCSV:hover {
+  background-color: #ff333f;
+}
+
+.card .row {
+  margin: 5px 0;
+}
+
+.row {
+  margin: 5px 0 10px 0;
+  width: 100%;
+}
+
+.col {
+  padding: 0 5px;
+}
+
+#chart_Elog {
+  height: 300px;
+  margin: 0 30% 0 20%;
+}/*# sourceMappingURL=elogstyle.css.map */

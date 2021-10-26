@@ -1,0 +1,457 @@
+$ABB-Gray5: #d2d2d2;
+$ABB-Gray7: #a9a9a9;
+$ABB-Gray11: #262626;
+$ABB-Red: #ff000f;
+$ABB-Green: #007a33;
+//////////////////////
+$axis-rang: $ABB-Red;
+$axis-rang-square: $ABB-Red;
+$speed-rang: $ABB-Gray7;
+$speed-rang-square: $ABB-Gray11;
+$btncricle: $ABB-Gray11;
+$Start: $ABB-Green;
+$Stop: $ABB-Red;
+$Reset: $ABB-Gray11;
+$Single-Cycle: $ABB-Gray11;
+$Continuous: $ABB-Red;
+
+/////////////////////////////////////
+$Gray: #727272;
+$font-color: #000000;
+
+:root {
+  --background-color: #{#f6f6f6};
+  --base-color: #{#fff};
+  --abb-color: #{#ff000f};
+  --text-color: #{#000};
+  --toggle-base-color: #{#efefef};
+  --card-head-color: #{#efefef};
+  --speed-color: #{#262626};
+}
+
+h1 {
+  font-family: "abbViceBold";
+  margin: 0px;
+  font-size: 33px;
+}
+h2 {
+  font-family: "abbVoiceRegular";
+  font-size: 27px;
+}
+.block {
+  color: var(--text-color);
+  width: 100%;
+  height: 100%;
+  padding: 2%;
+}
+label {
+  font-size: 17px;
+  font-family: "abbVoiceRegular";
+}
+.slidecontainer {
+  // color: var(--text-color);
+  width: 100%;
+  margin: 12px 0px;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 4.5%;
+  height: 33px;
+  cursor: pointer;
+}
+.speed {
+  background: lighten($ABB-Gray11, 40);
+}
+.speed::-webkit-slider-thumb {
+  background: var(--speed-color);
+}
+.axis {
+  background: lighten($axis-rang, 40);
+}
+.axis::-webkit-slider-thumb {
+  background: $axis-rang-square;
+}
+//////////////////////////////////////////////
+@mixin items2 {
+  display: grid;
+  grid-template-rows: 70px auto;
+  .card-titel-head {
+    grid-row: 1/2;
+  }
+  .block {
+    grid-row: 2/3;
+  }
+}
+@mixin items3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px repeat(2, 1fr) repeat(2, auto);
+  .items-3-r1 {
+    grid-row: 2/3;
+    .block {
+      padding: 20px 10px;
+    }
+  }
+  .items-3-r2 {
+    grid-row: 3/4;
+    .block {
+      padding: 20px 10px;
+    }
+  }
+  .items-3-r3 {
+    grid-row: 4/5;
+    .block {
+      padding: 6% 5%;
+    }
+  }
+  .items-3-r4 {
+    grid-row: 5/6;
+    .block {
+      padding: 6% 5%;
+    }
+  }
+  .card-titel-head {
+    grid-row: 1/2;
+  }
+}
+@mixin items4 {
+  display: grid;
+  grid-template-rows: 70px auto;
+  .block {
+    grid-row: 2/3;
+  }
+  .card-titel-head {
+    grid-row: 1/2;
+  }
+}
+@mixin items5 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 70px auto;
+  .items-5-c1 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .items-5-c2 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  .items-5-c3 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+  .card-titel-head {
+    grid-column: 1/4;
+  }
+}
+@mixin items6 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 70px auto;
+  .items-6-c1 {
+    grid: 1/2;
+    grid-row: 2/3;
+  }
+  .items-6-c2 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  .items-6-c3 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+  .items-6-c4 {
+    grid-column: 4/5;
+    grid-row: 2/3;
+  }
+  .items-6-c5 {
+    grid-column: 5/6;
+    grid-row: 2/3;
+  }
+  .items-6-r1 {
+    grid-column: 1/6;
+  }
+}
+.band-head {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+@media only screen and (min-width: 300px) {
+  .band-head {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto) auto 380px repeat(2, auto);
+  }
+  .items-1 {
+    grid-row: 1/2;
+  }
+  .items-2 {
+    grid-row: 2/3;
+    @include items2;
+  }
+  .items-3 {
+    grid-row: 3/4;
+    @include items3;
+  }
+  .items-4 {
+    grid-row: 4/5;
+    @include items4;
+  }
+  .items-5 {
+    grid-row: 6/7;
+    @include items5;
+  }
+  .items-6 {
+    grid-row: 5/6;
+    @include items6;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .band-head {
+    grid-template-columns: repeat(2, 1fr) 1.5fr 2fr;
+    grid-template-rows: 70px repeat(2, auto);
+  }
+  .items-1 {
+    grid-column: 1/5;
+    grid-row: 1/2;
+  }
+  .items-2 {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    @include items2;
+  }
+  .items-3 {
+    grid-column: 3/4;
+    grid-row: 2/4;
+    @include items3;
+  }
+  .items-4 {
+    grid-column: 4/5;
+    grid-row: 2/3;
+    @include items4;
+  }
+  .items-5 {
+    grid-column: 1/3;
+    grid-row: 3/4;
+    @include items5;
+  }
+  .items-6 {
+    grid-column: 4/5;
+    grid-row: 3/4;
+    @include items6;
+  }
+}
+/////////////////////////////
+.tex-center {
+  font-family: "abbViceBold";
+  font-size: 35px;
+  color: $ABB-Red;
+  height: 100px;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-align: center;
+}
+#text-container {
+  width: 100%;
+  height: 100%;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-align: center;
+}
+.toggle-base {
+  font-family: "abbVoiceRegular";
+  width: 100%;
+  // background-color: lighten($Gray, 49%);
+  background-color: var(--toggle-base-color);
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: auto 90px;
+  grid-template-rows: 100px;
+  .title {
+    grid-column: 1/2;
+    word-spacing: -1.5px;
+    padding: 15px;
+    .text1 {
+      font-size: 23px;
+      margin: 0%;
+      line-height: 1.3;
+      color: $ABB-Gray11;
+    }
+    .text2 {
+      font-size: 19px;
+      margin: 0%;
+      color: $ABB-Gray7;
+    }
+  }
+  .toggle-switch {
+    grid-column: 2/3;
+    margin: 5px 5px 5px 20px;
+    .toggle-1 {
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      padding: 5%;
+      margin: 0%;
+    }
+    .toggle-1_input {
+      display: none;
+    }
+    .toggle-1_button {
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      color: white;
+      background-color: $ABB-Red;
+      border-radius: 15px;
+      transition: all 0.5s ease-in-out;
+    }
+    .toggle-1_button::before {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      border-radius: 10px;
+      margin: 10%;
+      width: 80%;
+      height: 30px;
+      top: 0%;
+      padding: 3%;
+      content: "";
+      background: white;
+      transition: all 0.3s ease;
+    }
+    .toggle-1_input:checked + .toggle-1_button {
+      background: $ABB-Gray11;
+    }
+    .toggle-1_input:checked + .toggle-1_button::before {
+      content: "";
+      top: 40px;
+    }
+    //////////////
+    .toggle-2 {
+      @extend.toggle-1;
+    }
+    .toggle-2_input {
+      @extend.toggle-1_input;
+    }
+    .toggle-2_button {
+      @extend.toggle-1_button;
+    }
+    // .toggle-2_button::before {
+    //   @extend.toggle-1_button::before;
+    // }
+    .toggle-2_input:checked + .toggle-2_button {
+      background: $ABB-Gray11;
+    }
+    .toggle-2_input:checked + .toggle-2_button::before {
+      content: "";
+      top: 40px;
+    }
+  }
+}
+/////////////////////////////////////////////
+.card {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  border-radius: 0px;
+  background-color: var(--base-color);
+  transition: all 0.1s ease-in;
+  padding: 0%;
+}
+.card-titel-head {
+  font-family: "abbViceBold";
+  font-size: 28px;
+  width: 100%;
+  height: 70px;
+  padding: 0px 10px;
+  background: var(--card-head-color);
+  border-bottom: 2px solid $ABB-Red;
+  color: var(--text-color);
+}
+.card:hover {
+  top: -1px;
+  box-shadow: 0 6px 10px #00000099;
+}
+.card-head:hover {
+  top: -1px;
+  box-shadow: 0 6px 10px #00000099;
+}
+#chartdiv {
+  width: 100%;
+  height: 100%;
+}
+.btncircle {
+  @extend.block;
+  padding: 12%;
+}
+.btncircle:hover {
+  transform: scale(1.05);
+}
+.btncircle:active {
+  transform: scale(1);
+}
+// Button//
+.button {
+  @extend.block;
+  padding: 20% 5%;
+}
+.button a {
+  color: white;
+  font-family: "abbVoiceRegular";
+  font-size: 23px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  padding: 10% 5%;
+  border-radius: 5px;
+}
+.Start a:active {
+  background-color: darken($ABB-Red, 5);
+}
+.Start a:hover {
+  background-color: darken($ABB-Red, 5);
+}
+.Start a {
+  background-color: $ABB-Red;
+}
+.Stop a:active {
+  background-color: lighten($ABB-Gray11, 5);
+}
+.Stop a:hover {
+  background-color: lighten($ABB-Gray11, 5);
+}
+.Stop a {
+  background-color: lighten($ABB-Gray11, 10);
+}
+.Reset a:active {
+  background-color: lighten($ABB-Gray11, 20);
+}
+.Reset a:hover {
+  background-color: lighten($ABB-Gray11, 20);
+}
+.Reset a {
+  background-color: lighten($ABB-Gray11, 30);
+}
+
+#coverLoading {
+  top: -10px;
+}

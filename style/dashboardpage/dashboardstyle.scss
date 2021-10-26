@@ -1,0 +1,99 @@
+// .card{
+//     background:#fff;
+//     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+//     display :flex;
+//     padding: 15px 40px;
+//     flex-direction:  column;
+//     text-decoration: none;
+//     position: relative;
+//     top:0;
+//     transition: all .1s ease-in;
+// }
+// .card:hover{
+//     top:-2px;
+//     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+// }
+$abb_color: #ff000f; 
+
+.row {
+    padding: 10px;
+    &:nth-of-type(1) {
+        padding-top: 5px;
+        @media (min-width:0px) {
+            .col1 {
+                width: 100%; 
+                padding: 10px;
+                &:nth-of-type(1){
+                    padding-top: 0px;
+                }
+                &:nth-last-of-type(1) {
+                    padding-bottom: 0px;
+                }
+            }
+        }
+        @media (min-width:960px) {
+            .col1 {
+                width: (100%/3); 
+                padding: 0px 10px;
+            }
+        }
+    }
+    &:nth-of-type(3) {
+        @media (min-width:0px) {
+            .col1 {
+                width: 100%; 
+                padding: 10px;
+                &:nth-of-type(1){
+                    padding-top: 0px;
+                }
+                &:nth-last-of-type(1) {
+                    padding-bottom: 0px;
+                }
+            }
+        }
+        @media (min-width:1400px) {
+            .col1 {
+                width: (100%/2); 
+                padding: 0px 10px;
+            }
+        }
+    }
+}
+.col {
+    padding: 0px 10px;
+    
+}
+
+.infoRobot {
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    display: inline-block;
+    margin: auto;
+    justify-content: space-between;
+    text-align: center;
+
+    span {
+        &:nth-of-type(even) {
+            // color: rgba(235, 74, 95, 0.856);
+            color: $abb_color;
+        }
+        &:nth-of-type(odd) {
+            color: rgb(74, 177, 241);
+        }
+    }
+}
+
+#chart_Elog {
+    height: 300px;
+    margin: 0 10%;
+}
+#chart_Energy,
+#chart_workTime {
+  height: 300px;
+  
+}
+
+#chart_statusRobot {
+    height: 150px;
+}

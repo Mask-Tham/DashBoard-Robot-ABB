@@ -1,0 +1,88 @@
+
+$abb_color: #fd0118;
+
+.selectDate {
+    display: inline-block;
+    margin-left: auto;
+    font-size: 16px;
+    padding-top: 9px;
+}
+
+.selectTime {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+    padding-top: 9px;
+}
+.ExCSV {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+    padding: 9px;
+    color: white;
+    background-color: $abb_color;
+    border-radius: 5px;
+    border: none;
+
+    &:hover {
+        background-color: lighten($color:$abb_color, $amount: 10%);
+    }
+}
+
+// .card{
+//     background:#fff;
+//     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+//     display :flex;
+//     padding: 15px 40px;
+//     flex-direction:  column;
+//     text-decoration: none;
+//     position: relative;
+//     top:0;
+//     transition: all .1s ease-in;
+// }
+// .card:hover{
+//     top:-2px;
+//     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+// }
+// .card-title {
+//     border-color: $abb_color;
+//     border-width: 2px;
+// }
+.row {
+    padding: 10px;
+}
+.col {
+    padding: 0px 10px;
+}
+
+#chart {
+    
+    @media (min-width:0px){
+        .col1 {
+            width: 100%;
+            padding: 0px 10px;
+        }
+    }
+    @media (min-width:1400px){
+        .col1 {
+            width: (100%/2);
+            padding: 0px 10px;
+        }
+    }
+    
+} 
+
+#chart_total {
+    height: 500px;
+    width: 100%;
+}
+
+#chart_Axes1,
+#chart_Axes2,
+#chart_Axes3,
+#chart_Axes4,
+#chart_Axes5,
+#chart_Axes6 {
+  height: 300px;
+  
+}

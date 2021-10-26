@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<link rel="stylesheet" href="/docs/style/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+	<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script> -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+		crossorigin="anonymous"></script>
+	
+	<!-- script Chart-->
+	<script src="https://code.highcharts.com/stock/highstock.js"></script>
+	<script src="https://code.highcharts.com/stock/modules/data.js"></script>
+	<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+	<!-- /script Chart-->
+
+	<script src="/docs/script/tether/tether.min.js"></script>
+	<script src="/docs/script/websocket.js"></script>
+	<script src="/docs/script/datetime.js"></script>
+	<script src="/docs/script/sidebar.js"></script>
+	<script src="/docs/script/energy.js"></script>
+	<script src="/docs/script/theme.js"></script>
+	<script lang="javascript" src="/docs/script/sheetjs-master/dist/xlsx.full.min.js"></script>
+	<script lang="javascript" src="/docs/script/FileSaver.js-master/dist/FileSaver.min.js"></script>
+
+	<link href="/docs/style/threme/style.css" rel="stylesheet">
+	<link href="/docs/style/energypage/energystyle.css" rel="stylesheet">
+	<link rel="icon" href="img/ABBicon.jpg" type="image/x-icon">
+
+	<title>Energy</title>
+</head>
+
+<body>
+	<div id="websocketStatus">WEBSOCKET OFF !!!</div>
+	<!-- header -->
+	<nav class="navbar fixed-top" id="header">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<div id="sidebar-toggle-button">
+					<i class="fa fa-bars" aria-hidden="true"></i>
+				</div>
+				<div class="brand">
+					<a href="/docs/DashBoard.html">
+						<span class="hidden-xs-down mr-5 ml-3"><img src="/docs/img/ABB.png" height="30px"></span>
+					</a>
+				</div>
+						<span class="lead ml-5">Energy</span>
+					
+				<div id="themeMode" onclick="clickChangeTheme()" class="moon">
+					
+					<img id="iconTheme" src="/docs/svg/moon.svg" height="20px" width="20px" >
+				
+				</div>
+				<div class="datetime">
+					<span id="datetime"></span>
+				</div>
+
+			</div>
+		</div>
+	</nav>
+	<!-- /header -->
+
+	<!-- sidebar -->
+	<div class="sidebar-toggle" id="sidebar">
+
+	</div>
+	<!-- /sidebar -->
+
+	<div class="page-content-toggle" id="page-content-wrapper">
+		<div id="coverLoading">
+            <div id="loading"></div>
+        </div>
+		<div class="container-fluid" id="loaded">
+
+			<!-- 1st row -->
+			<div class="row">
+
+				<div class="col">
+					<div class="card card-body">
+						<div class="card-title">
+							Energy Total
+							<button onclick="exportTableToExcel()" class="ExCSV">
+								<i class="fa fa-download" aria-hidden="true"></i>
+								Export CSV
+							</button>
+						</div>
+						<div id="chart_total"></div>
+					</div>
+				</div>
+
+			</div>
+
+			<div id="chart">
+
+			</div>
+
+
+		</div>
+		<!-- /.container-fluid -->
+
+	</div>
+	
+
+</body>
+
+</html>

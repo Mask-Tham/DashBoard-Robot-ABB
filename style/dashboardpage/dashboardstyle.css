@@ -1,0 +1,76 @@
+.row {
+  padding: 10px;
+}
+.row:nth-of-type(1) {
+  padding-top: 5px;
+}
+@media (min-width: 0px) {
+  .row:nth-of-type(1) .col1 {
+    width: 100%;
+    padding: 10px;
+  }
+  .row:nth-of-type(1) .col1:nth-of-type(1) {
+    padding-top: 0px;
+  }
+  .row:nth-of-type(1) .col1:nth-last-of-type(1) {
+    padding-bottom: 0px;
+  }
+}
+@media (min-width: 960px) {
+  .row:nth-of-type(1) .col1 {
+    width: 33.3333333333%;
+    padding: 0px 10px;
+  }
+}
+@media (min-width: 0px) {
+  .row:nth-of-type(3) .col1 {
+    width: 100%;
+    padding: 10px;
+  }
+  .row:nth-of-type(3) .col1:nth-of-type(1) {
+    padding-top: 0px;
+  }
+  .row:nth-of-type(3) .col1:nth-last-of-type(1) {
+    padding-bottom: 0px;
+  }
+}
+@media (min-width: 1400px) {
+  .row:nth-of-type(3) .col1 {
+    width: 50%;
+    padding: 0px 10px;
+  }
+}
+
+.col {
+  padding: 0px 10px;
+}
+
+.infoRobot {
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  display: inline-block;
+  margin: auto;
+  justify-content: space-between;
+  text-align: center;
+}
+.infoRobot span:nth-of-type(even) {
+  color: #ff000f;
+}
+.infoRobot span:nth-of-type(odd) {
+  color: #4ab1f1;
+}
+
+#chart_Elog {
+  height: 300px;
+  margin: 0 10%;
+}
+
+#chart_Energy,
+#chart_workTime {
+  height: 300px;
+}
+
+#chart_statusRobot {
+  height: 150px;
+}/*# sourceMappingURL=dashboardstyle.css.map */
