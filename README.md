@@ -1,6 +1,9 @@
 # DashBoard-Robot-ABB
  DashBoard-Robot-ABB
 
+Preview: 
+
+
 HOW TO USE:
 1. Connect Laptop with ABB robot controller.
 2. Put the docs folder in the HOME folder in the ABB robot controller.
